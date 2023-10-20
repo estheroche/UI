@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="bundle.js">
+    </script>
+</head>
+<body>
+    
+<h2>GASLESS ACCOUNT ABSTRACTION</h2>
+
+<script>
+    window.app.initContract().then(function ({contractAddress}) {
+        console.log('counter contract', contractAddress)
+        // document.getElementById('capture_button').disabled = false
+    })
+</script>
+
+<button id="capture_button" onClick="window.app.callIcrement()">
+    increment
+</button>
+
+<button id="capture_button" onClick="window.app.getNumber()">
+    get number
+</button>
+
+<hr>
+<div id="logview"></div>
+</body>
+</html>
